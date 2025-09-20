@@ -15,7 +15,7 @@ public class Food {
     private String name;
     private double price;
 
-    @OneToOne
-    @JoinColumn(name = "user_id") // 외래키의 주인이 가지는 칼럼
+    @ManyToOne
+    @JoinColumn(name = "user_id") // 외래키가 주인인 칼럼에 작성
     private User user;
 }
