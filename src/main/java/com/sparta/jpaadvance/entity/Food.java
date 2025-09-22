@@ -18,6 +18,10 @@ public class Food {
     private String name;
     private double price;
 
-    @OneToMany(mappedBy = "food") // 외래키의 주인이 order가 된다.
-    private List<Order> orderList = new ArrayList<>();
+    // 다대일
+    // 매니투원 속성 중 fetch 디폴트 eager(즉시로딩)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
 }
